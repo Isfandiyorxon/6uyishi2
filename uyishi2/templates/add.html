@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .add-container {
+            max-width: 500px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .add-container h2 {
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Add New Item</h1>
+    </header>
+    <div class="add-container">
+        <h2>Add Details</h2>
+        <form action="process_add.php" method="POST">
+            <div class="form-group">
+                <label for="item-name">Item Name</label>
+                <input type="text" id="item-name" name="item_name" placeholder="Enter the item name" required>
+            </div>
+            <div class="form-group">
+                <label for="item-category">Category</label>
+                <select id="item-category" name="item_category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="grocery">Grocery</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="item-description">Description</label>
+                <textarea id="item-description" name="item_description" placeholder="Enter a brief description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="item-price">Price ($)</label>
+                <input type="number" id="item-price" name="item_price" placeholder="Enter the price" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Item</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 Add Item Page. All rights reserved.
+    </footer>
+</body>
+</html>
